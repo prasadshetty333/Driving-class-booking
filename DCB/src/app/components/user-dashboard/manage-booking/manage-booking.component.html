@@ -1,0 +1,49 @@
+<p>manage-booking works!</p>
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="date">Date:</label>
+      <input [min]="getMinimumDate()" [max]="this.userDetails.selectedEndDate" class="form-control" id="date" type="date" formControlName="date" (change)="handleOnDateAndTimeChange()">
+    </div>
+    
+    <div>
+      <label for="time">Time:</label>
+      <select class="form-select"  id="time" formControlName="time" (change)="handleOnDateAndTimeChange()">
+        <option *ngFor="let time of times" [value]="time">{{ time }}</option>
+      </select>
+    </div>
+    
+    <div>
+      <label for="instructor">Instructor:</label>
+      <select class="form-select"  id="instructor" formControlName="instructor">
+        <option *ngFor="let instructor of instructors" [value]="instructor._id">{{ instructor.name }}</option>
+      </select>
+    </div>
+    
+    <button *ngIf="!this.checkExpired()" class="btn btn-primary" type="submit">Submit</button>
+    <b *ngIf="this.checkExpired()"  class="text-danger">Your end date is over</b>
+  </form>
+
+
+  <table class="table">
+    <thead class="bg-light">
+      <th>
+        Date
+      </th>
+      <th>
+        Time slot
+      </th>
+      <th>
+        Instructor
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of allBookings">
+        <td>{{booking.selectedDate}}</td>
+        <td>{{booking.selectedTime}}</td>
+        <td>{{booking.selectedInstructor.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  

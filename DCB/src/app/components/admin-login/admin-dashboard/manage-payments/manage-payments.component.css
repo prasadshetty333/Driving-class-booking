@@ -1,0 +1,75 @@
+.payment-list {
+    margin: 20px 0;
+  }
+  
+  .payment-list h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .payment-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .payment-list th, .payment-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .payment-list th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .payment-list input {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+  }
+  
+  .payment-list button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .payment-list button:hover {
+    background-color: #c9302c;
+  }
+  
+  @media (max-width: 600px) {
+    .payment-list table, .payment-list thead, .payment-list tbody, .payment-list th, .payment-list td, .payment-list tr {
+      display: block;
+    }
+  
+    .payment-list tr {
+      margin-bottom: 15px;
+    }
+  
+    .payment-list td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .payment-list td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  
+    .payment-list th {
+      display: none;
+    }
+  }
+  

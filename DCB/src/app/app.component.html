@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving School</title>
+    <link rel="stylesheet" href="/DCB/src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/login" class="logo-link">
+                <img src="assets/logo1.png" alt="Logo" class="logo">
+                <h1 style="color: #ffcc00;"><strong>DriveEase</strong></h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a routerLink="/login">Home</a></li>
+                    <li><a routerLink="/instructors">Instructors</a></li>
+                    <li><a routerLink="/lessons">Lessons</a></li>
+                    <li><a routerLink="/packages">Packages</a></li>
+                    <li><a routerLink="/location">Location</a></li>
+                    <li><a routerLink="/register" class="book-now">Book Now</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>Phone: 8151030788</p>
+            </div>
+          
+        </div>
+       
+
+    </header>
+
+    <router-outlet></router-outlet>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/login" class="logo-link">
+                    <img src="assets/logo1.png" alt="Logo" class="logo">
+                    <h1 style="color: #ffcc00;"><strong>DriveEase</strong></h1>
+                </a>
+                <p>Drive with Confidence</p>
+                <a routerLink="/register" class="btn">Book Now</a>
+            </div>
+            <div class="footer-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a routerLink="/login">Home</a></li>
+                    <li><a routerLink="/instructors">Instructors</a></li>
+                    <li><a routerLink="/lessons">Lessons</a></li>
+                    <li><a routerLink="/packages">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Prasad Shetty</p>
+                <p>Email: prasaaad333&#64;gmail.com</p>
+                <p>Phone: 8151030788</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

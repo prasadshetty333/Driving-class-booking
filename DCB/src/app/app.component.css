@@ -1,0 +1,183 @@
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.book-now {
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #333;
+}
+
+.contact-info {
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-logo, .footer-nav, .footer-contact {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.footer-logo .social-media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.social-media img {
+  width: 48px;
+  height: 48px;
+}
+
+.btn {
+  background-color: #0056b3;
+  color: #e1e1e1;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.logo1 {
+  height: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-info {
+    margin-top: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo, .footer-nav, .footer-contact {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-media a {
+    margin: 0;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 10px;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  .book-now {
+    padding: 8px 16px;
+  }
+
+  .footer-container {
+    padding: 20px;
+  }
+
+  .footer-logo, .footer-nav, .footer-contact {
+    margin: 5px 0;
+  }
+
+  .btn {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+.logo-link {
+  text-decoration: none; /* Remove underline from the link */
+  display: flex; /* Align logo and heading side by side */
+  align-items: center; /* Center align items vertically */
+}
+
+.logo-link .logo {
+  margin-right: 10px; /* Space between logo and heading */
+}
+
+.logo-link h1 {
+  margin: 0; /* Remove default margin */
+}

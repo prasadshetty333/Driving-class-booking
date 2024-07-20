@@ -1,0 +1,21 @@
+<p>class-attended works!</p>
+<table class="table">
+    <thead class="bg-light">
+      <th>
+        Date
+      </th>
+      <th>
+        Time slot
+      </th>
+      <th>
+        Instructor
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of allBookings">
+        <td>{{booking.selectedDate}}</td>
+        <td>{{booking.selectedTime}}</td>
+        <td>{{booking.selectedInstructor.name}}</td>
+      </tr>
+    </tbody>
+  </table>

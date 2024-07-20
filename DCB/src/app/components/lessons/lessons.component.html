@@ -1,0 +1,17 @@
+<div class="lessons-container">
+  <h1 class="animate-heading">DRIVING LESSONS</h1>
+  <div class="driving-tips">
+    <div *ngFor="let tip of drivingTips" class="driving-tip">
+      <a [href]="tip.link" target="_blank" class="tip-link">
+        <img [src]="tip.photo" alt="{{ tip.title }}" class="tip-photo">
+        <div class="tip-content">
+          <h3>{{ tip.title }}</h3>
+          <p>{{ tip.description }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <p class="more-lessons-link">
+    For more driving lessons, <a href="https://www.wikihow.com/Drive-a-Car" target="_blank">click here</a>.
+  </p>
+</div>

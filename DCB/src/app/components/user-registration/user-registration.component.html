@@ -1,0 +1,88 @@
+<div class="registration-container container p-5 my-5">
+  <h2>User Registration</h2>
+ 
+  <form class="row" (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    <div class="form-group col-12 col-md-6">
+      <label for="name">Name*</label>
+      <input type="text" id="name" [(ngModel)]="user.name" name="name" required #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="phone">Phone Number*</label>
+      <input type="text" id="phone" [(ngModel)]="user.phone" name="phone" required #phone="ngModel">
+      <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+        Phone number is required.
+      </div>
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="email">Email (optional)</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" #email="ngModel">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+        Email is required.
+      </div>
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="gender">Gender</label>
+      <select id="gender" [(ngModel)]="user.gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" [(ngModel)]="user.dob" name="dob">
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="password">Password*</label>
+      <input type="password" id="password" [(ngModel)]="user.password" name="password" required #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+        Password is required.
+      </div>
+    </div>
+
+    <!-- Step 1: Select Wheeler Type -->
+    <div class="form-group col-12 col-md-6">
+      <label for="wheelerType">Select Wheeler Type:</label>
+      <select id="wheelerType" name="wheelerType" [(ngModel)]="user.wheelerType" #wheelerType="ngModel" (change)="handleWheelTypeSelection()" required>
+        <option *ngFor="let type of WheelerTypes" [value]="type.name">{{ type.name | titlecase }}</option>
+      </select>
+      <div *ngIf="wheelerType.invalid && wheelerType.touched" class="error">Please select a wheeler type.</div>
+    </div>
+
+    <!-- Step 2: Select Package -->
+    <div class="form-group col-12 col-md-6">
+      <h6><strong>Select Package for {{ user.wheelerType }}</strong></h6>
+      <select id="package" name="package" [(ngModel)]="user.package" (change)="handlePackageSelection()" #package="ngModel" required>
+        <option *ngFor="let pkg of packages" [value]="pkg.value">{{ pkg.label }}</option>
+      </select>
+      <div *ngIf="package.invalid && package.touched" class="error">Please select a package.</div>
+    </div>
+
+    <!-- Step 3: Find Your Available Date -->
+    <div class="form-group col-12 col-md-6">
+      <label for="selectedDate">Select Start Date:</label>
+      <input type="date" id="selectedDate" name="selectedDate" [(ngModel)]="user.selectedStartDate" [min]="getTodayDate()" (change)="updateEndDate(user.selectedStartDate)" #selectedDate="ngModel" required>
+      <div *ngIf="selectedDate.invalid && selectedDate.touched" class="error">Please select a start date.</div>
+    </div>
+
+    <div class="form-group col-12 col-md-6">
+      <label for="selectedEndDate">End Date:</label>
+      <input type="text" id="selectedEndDate" name="selectedEndDate" [(ngModel)]="user.selectedEndDate" readonly>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary px-4 py-2 w-bold" [disabled]="registrationForm.invalid">Register</button>
+    </div>
+    <div class="d-flex justify-content-center my-2">
+      <a class=" my-2" href="/user-login">Already registered? Login</a>
+    </div>
+  </form>
+</div>

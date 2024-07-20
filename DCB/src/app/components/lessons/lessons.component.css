@@ -1,0 +1,62 @@
+/* Lessons Component */
+.lessons-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.driving-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.driving-tip {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden; /* Ensure content doesn't overflow */
+  background-color: #f9f9f9;
+}
+
+.driving-tip a {
+  display: flex;
+  width: 100%; /* Take full width of the container */
+  text-decoration: none;
+  color: inherit;
+}
+
+.tip-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.tip-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.driving-tip h3 {
+  margin-top: 0;
+}
+
+.driving-tip p {
+  margin-bottom: 0;
+}
+
+.more-lessons-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more-lessons-link a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.more-lessons-link a:hover {
+  text-decoration: underline;
+}

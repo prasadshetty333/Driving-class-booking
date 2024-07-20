@@ -1,0 +1,32 @@
+<div class="booking-form-container_main ">
+  <div class="booking-form-container">
+    <h2 class="mb-4">User Login</h2>
+      <form (ngSubmit)="submitForm()" #bookingForm="ngForm" novalidate>
+        <div class="form-fields">
+
+          <div class="form-group">
+            <label for="phone">Phone*</label>
+            <input type="text" id="phone" [(ngModel)]="formData.phone" name="phone" required #phone="ngModel">
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+              Phone is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password*</label>
+            <input type="password" id="password" [(ngModel)]="formData.password" name="password" required #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+              Password is required
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Submit and Navigation Buttons -->
+        <div class="form-actions">
+          <button class="mx-2" type="submit" [disabled]="bookingForm.invalid">Login</button>
+          <!-- <button type="button" (click)="navigateToForgotPassword()">Forgot Password?</button> -->
+        </div>
+      </form>
+  </div>
+</div>

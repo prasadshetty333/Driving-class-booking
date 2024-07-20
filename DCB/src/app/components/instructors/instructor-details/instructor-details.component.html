@@ -1,0 +1,5 @@
+<div class="instructor-details-container" *ngIf="instructor">
+  <h1>{{ instructor.name }}</h1>
+  <img [src]="instructor.photo" alt="{{ instructor.name }}">
+  <div [innerHTML]="instructor.description"></div>
+</div>

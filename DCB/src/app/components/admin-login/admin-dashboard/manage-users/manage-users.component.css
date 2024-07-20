@@ -1,0 +1,104 @@
+.users-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .users-list h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .users-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .users-list thead th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .users-list tbody td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .users-list input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .users-list button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .users-list button:hover {
+    background-color: #c82333;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .users-list {
+      padding: 10px;
+    }
+  
+    .users-list h3 {
+      font-size: 1.5rem;
+    }
+  
+    .users-list table, 
+    .users-list thead, 
+    .users-list tbody, 
+    .users-list th, 
+    .users-list td, 
+    .users-list tr { 
+      display: block; 
+    }
+  
+    .users-list thead {
+      float: left;
+    }
+  
+    .users-list tbody {
+      width: auto;
+      position: relative;
+      overflow-x: auto;
+    }
+  
+    .users-list td, 
+    .users-list th {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .users-list td {
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .users-list td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 10px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+  

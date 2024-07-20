@@ -1,0 +1,30 @@
+<div class="bookings-list">
+    <h3>Booking List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>WheelerType</th>
+          <th>Selected Date</th>
+          <th>Selected Time</th>
+          <th>Selected Instructor</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of bookings">
+          <td>{{book.userId.name}}</td>
+          <td>{{book.userId.wheelerType}}</td>
+          <td>{{book.selectedDate}}</td>
+          <td>{{book.selectedTime}}</td>
+          <td>{{book.selectedInstructor.name}}</td>
+          <td>
+            <button *ngIf="!book.attended" (click)="makeBookingAsAttended(book._id)">
+              Attended  
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

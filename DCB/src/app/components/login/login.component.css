@@ -1,0 +1,412 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 50px;
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.book-now {
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #333;
+}
+
+.contact-info {
+  font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('/assets/landingPage/first.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content h1 {
+  font-weight: bolder;
+  margin-bottom: 20px;
+  font-size: 3.5em; /* Default font size */
+}
+
+.animated-heading {
+  animation: bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.feature, .feature1, .feature2 {
+  width: 300px; /* Fixed width for desktop */
+  height: 200px; /* Fixed height for desktop */
+  margin: 20px;
+  padding: 20px;
+  background-color: #e6b800; /* Adjusted background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.feature {
+  background: url('/assets/landingPage/experience.jpg') no-repeat center center/cover;
+}
+
+.feature1 {
+  background: url('/assets/landingPage/package.jpg') no-repeat center center/cover;
+}
+
+.feature2 {
+  background: url('/assets/landingPage/results.jpg') no-repeat center center/cover;
+}
+
+/* About Section */
+
+/* Packages Section */
+.packages {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffcc00;
+}
+
+.package {
+  display: inline-block;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  text-align: center;
+  padding: 50px 20px;
+  background: url('/assets/landingPage/why.jpg') ;
+  position: relative;
+  color: #000000;
+}
+
+.why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Use a solid black background to ensure the dimming effect */
+  opacity: 0.7; /* Increase opacity for a dimmer effect */
+  z-index: -1; /* Placed the overlay behind the content */
+}
+
+.why-choose-us .content {
+  position: relative;
+  z-index: 1;
+}
+
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.reason {
+  width: 45%; /* Adjusted width for smaller screens */
+  margin: 20px 0;
+  text-align:center;
+}
+
+
+/* Testimonials Section */
+.testimonials {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #0056b3;
+  color: #e1e1e1;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn1 {
+  background-color: #ffcc00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+.featured-cols {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.f-icon img {
+  width: 50px;
+  height: auto;
+}
+
+.f-content {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #e1e1e1;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  background-color: #1f74d0; /* Adjusted hover background color */
+}
+
+.btn1:hover {
+  background-color: #f8d854; /* Adjusted hover background color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5em; /* Adjusted font size for smaller screens */
+  }
+
+  .features {
+    flex-direction: column; /* Stacked layout for features */
+    align-items: center;
+  }
+
+  .feature, .feature1, .feature2 {
+    width: 80%; /* Adjusted width for smaller screens */
+    margin: 20px 0; /* Reduced margin */
+  }
+
+  .about-content {
+    flex-direction: column; /* Stacked layout for about content */
+  }
+
+  .reason {
+    width: 80%; /* Adjusted width for smaller screens */
+    margin: 10px 0; /* Reduced margin */
+  }
+
+  .package {
+    width: 80%; /* Adjusted width for smaller screens */
+  }
+
+  .login-container {
+    width: 90%; /* Adjusted width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2em; /* Further reduced font size for smallest screens */
+  }
+
+  .feature, .feature1, .feature2 {
+    width: 90%; /* Adjusted width for smallest screens */
+  }
+
+  .reason {
+    width: 90%; /* Adjusted width for smallest screens */
+  }
+
+  .package {
+    width: 90%; /* Adjusted width for smallest screens */
+  }
+
+  .login-container {
+    width: 95%; /* Adjusted width for smallest screens */
+  }
+}
+
+.about {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0056b3;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content img {
+  height: 200px;
+  border-radius: 10px;
+  flex: 1 1 100%;
+}
+
+.about-content p {
+  flex: 1 1 100%;
+  color: white;
+  margin: 0 20px;
+}
+
+.btn1 {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  .about-content img, .about-content p {
+    flex: 1 1 45%;
+  }
+
+  .about-content img {
+    order: 1;
+  }
+
+  .about-content p {
+    order: 2;
+  }
+}
+
+@media (max-width: 599px) {
+  .about-content img {
+    height: auto;
+    width: 100%;
+  }
+
+  .about-content p {
+    text-align: justify;
+  }
+}
+
+.car-animation {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Adjust based on your design */
+  overflow: hidden;
+}
+
+.car {
+  position: absolute;
+  bottom: 0;
+  left: -200px; /* Start position off-screen */
+  width: 200px; /* Adjust size based on your design */
+  animation: drive 8s linear infinite;
+}
+
+@keyframes drive {
+  0% {
+      left: -200px; /* Start position off-screen */
+  }
+  50% {
+      left: calc(100% - 200px); /* Middle of the screen */
+  }
+  100% {
+      left: -200px; /* End position off-screen */
+  }
+}

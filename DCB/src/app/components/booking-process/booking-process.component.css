@@ -1,0 +1,231 @@
+.booking-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+
+.booking-form-container_main{
+    margin: 80px;
+}
+
+.form-fields {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #0056b3;
+  color: #e1e1e1;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-actions button:hover {
+  background-color: #004494;
+}
+
+.time-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.time-button.selected {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .booking-form-container {
+    padding: 10px;
+  }
+
+  .form-group select,
+  .form-group input[type="date"],
+  .form-group input[type="time"] {
+    font-size: 0.9em;
+  }
+
+  .form-actions button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .time-buttons {
+    gap: 5px;
+  }
+
+  .time-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 400px) {
+  .booking-form-container {
+    padding: 5px;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+  }
+
+  .form-group select,
+  .form-group input[type="date"],
+  .form-group input[type="time"] {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+
+  .form-actions button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+
+  .time-button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
+
+
+.form-fields {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+.booknow-container {
+  max-width: 1200px; /* Adjust the width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.instructor-list {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly around items */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.instructor-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px; /* Fixed width for each instructor card */
+  text-align: center;
+}
+
+.instructor-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.instructor-card h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn.book-now {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.book-now:hover {
+  background-color: #e6b800;
+}
+
+.selected-instructor{
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px; /* Fixed width for each instructor card */
+  text-align: center;
+}
+
+  
+  

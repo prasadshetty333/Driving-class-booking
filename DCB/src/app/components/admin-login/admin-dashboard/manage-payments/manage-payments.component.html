@@ -1,0 +1,22 @@
+<div class="payment-list">
+    <h3>Payment List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Method</th>
+          <th>Booking Id</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td data-label="Amount"><input [(ngModel)]="payment.amount"></td>
+          <td data-label="Method"><input [(ngModel)]="payment.method"></td>
+          <td data-label="Booking Id"><input [(ngModel)]="payment.bookingId"></td>
+          <!-- <td data-label="Actions"><button (click)="deletePayments(payment._id)">Delete</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

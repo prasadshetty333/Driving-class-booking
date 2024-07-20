@@ -1,0 +1,26 @@
+<div class="users-list">
+    <h3>Users List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td data-label="Name">{{user.name}}</td>
+          <td data-label="Phone">{{user.phone}}</td>
+          <td data-label="Email">{{user.email}}</td>
+          <td data-label="Gender">{{user.gender}}</td>
+          <td data-label="Date of Birth">{{user.dob}}</td>
+          <td data-label="Actions"><button (click)="deleteUsers(user._id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
