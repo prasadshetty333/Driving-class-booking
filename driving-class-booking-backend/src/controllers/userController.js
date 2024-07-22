@@ -83,13 +83,11 @@ exports.loginUser = async (req, res) => {
   console.log(req.body);
   try {
     const user = await User.findOne({ phone });
-    console.log(user);
+    
     if (!user) {
       return res.status(401).send('Authentication failed. User not found.');
     }
-    console.log(getFormattedDate());
-    console.log(user.selectedEndDate);
-    console.log(isTodaysDateGreatedThanDate(user.selectedEndDate));
+  
 
     if(isTodaysDateGreatedThanDate(user.selectedEndDate)){
       return res.status(401).send('Package Expired.');
