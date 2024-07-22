@@ -168,7 +168,6 @@ router.post('/instructors', async (req, res) => {
   router.get('/bookings', async (req, res) => {
     try {
       const today = getFormattedDate();
-      console.log(today , 'today');
       const booking = await Booking.find({ selectedDate: { $gte: today } })
       .sort({ selectedDate: 1 })
       .populate('userId' , ['name' , 'wheelerType'])
