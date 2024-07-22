@@ -4,9 +4,18 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 50px 20px;
   background-color: #ffcc00;
+  flex-wrap: wrap;
 }
+
+.packages-container .mainHeading{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
 
 .package {
   background-color: #fff;

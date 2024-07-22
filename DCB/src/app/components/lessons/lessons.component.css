@@ -11,6 +11,12 @@
   gap: 20px;
 }
 
+.heading{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .driving-tip {
   display: flex;
   align-items: flex-start;

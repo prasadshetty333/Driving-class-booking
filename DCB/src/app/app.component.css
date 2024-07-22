@@ -156,6 +156,8 @@ footer {
 
   .footer-container {
     padding: 20px;
+   
+    margin-top: 10px;
   }
 
   .footer-logo, .footer-nav, .footer-contact {
@@ -180,4 +182,11 @@ footer {
 
 .logo-link h1 {
   margin: 0; /* Remove default margin */
+}
+
+.nav-container{
+  
+  /* width: 100%; */
+  padding: 15px;
+  margin-top: 10px;
 }

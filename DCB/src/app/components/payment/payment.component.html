@@ -1,4 +1,5 @@
-<div class="payment-container">
+<div class="payment_main_container">
+  <div class="payment-container">
   <h2>Payment Details</h2>
   <form (ngSubmit)="submitPayment()" #paymentForm="ngForm">
     <div class="form-group">
@@ -35,3 +36,5 @@
     <button type="submit" class="btn1" [disabled]="paymentForm.invalid">Make Payment</button>
   </form>
 </div>
+</div>
+

@@ -1,5 +1,7 @@
-<p>manage-booking works!</p>
-<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+<div class="mt-5">
+  
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <h3 class="heading">Add Bookings</h3>
     <div>
       <label for="date">Date:</label>
       <input [min]="getMinimumDate()" [max]="this.userDetails.selectedEndDate" class="form-control" id="date" type="date" formControlName="date" (change)="handleOnDateAndTimeChange()">
@@ -22,10 +24,13 @@
     <button *ngIf="!this.checkExpired()" class="btn btn-primary" type="submit">Submit</button>
     <b *ngIf="this.checkExpired()"  class="text-danger">Your end date is over</b>
   </form>
+</div>
 
 
+<h3 class="heading mt-5">Bookings List</h3>
   <table class="table">
-    <thead class="bg-light">
+    
+    <thead>
       <th>
         Date
       </th>

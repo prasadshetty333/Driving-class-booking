@@ -2,11 +2,10 @@
 <div class="user-dashboard">
     <h1>User Dashboard</h1>
     <nav>
-        <ul>
-            <li><a routerLink="/user-dashboard/manage-booking">Manage Booking</a></li>
-            <li><a routerLink="/user-dashboard/class-attended">Classes Attended</a></li>
+        <ul class="mt-5">
+            <li><a routerLink="/user-dashboard/manage-booking" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Manage Bookings</a></li>
+            <li><a routerLink="/user-dashboard/class-attended" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Classes Attended</a></li>
         </ul>
     </nav>
     <router-outlet></router-outlet>
-  </div>
-  
+</div>

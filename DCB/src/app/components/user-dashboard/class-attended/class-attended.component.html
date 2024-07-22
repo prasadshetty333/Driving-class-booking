@@ -1,21 +1,24 @@
-<p>class-attended works!</p>
-<table class="table">
-    <thead class="bg-light">
-      <th>
-        Date
-      </th>
-      <th>
-        Time slot
-      </th>
-      <th>
-        Instructor
-      </th>
+
+<div class="class-container">
+  <h2 class="mainHeading mt-5">
+    Classes Attended
+</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time slot</th>
+        <th>Instructor</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let booking of allBookings">
-        <td>{{booking.selectedDate}}</td>
-        <td>{{booking.selectedTime}}</td>
-        <td>{{booking.selectedInstructor.name}}</td>
+        <td data-label="Date">{{ booking.selectedDate }}</td>
+        <td data-label="Time slot">{{ booking.selectedTime }}</td>
+        <td data-label="Instructor">{{ booking.selectedInstructor.name }}</td>
       </tr>
     </tbody>
   </table>
+
+</div>
+

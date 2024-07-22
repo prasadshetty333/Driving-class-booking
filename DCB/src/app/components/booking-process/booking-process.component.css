@@ -9,6 +9,7 @@
 }
 
 
+
 .booking-form-container_main{
     margin: 80px;
 }
@@ -229,3 +230,8 @@ button[disabled] {
 
   
   
+@media (max-width :767px) {
+  .booking-form-container_main {
+    margin: 30px;
+  }
+}

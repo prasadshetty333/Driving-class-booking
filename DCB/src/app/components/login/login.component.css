@@ -124,6 +124,8 @@ nav ul li a {
   background: url('/assets/landingPage/why.jpg') ;
   position: relative;
   color: #000000;
+  background-position:  center;
+  background-size: cover;
 }
 
 .why-choose-us::before {
