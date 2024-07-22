@@ -1,12 +1,13 @@
 .users-list {
-  width: 100%;
-  margin: 20px 0;
+  width: 80%; /* Adjust the width of the container */
+  margin: 20px auto; /* Center the table container */
   text-align: center;
 }
 
 .users-list table {
   width: 100%;
   border-collapse: collapse;
+  margin: 0 auto;
 }
 
 .users-list th, .users-list td {
@@ -20,29 +21,29 @@
   color: #f1f1f1;
 }
 
-.btn {
-  background-color: #0056b3;
-  color: #e1e1e1;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-
 .users-list button {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Default background color for Delete button */
   color: #fff;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 5px; /* Add space between buttons */
 }
+
+.users-list button.view-button {
+  background-color:#0056b3; /* Background color for View button */
+  color: #ffffff; /* Text color for better visibility */
+}
+
+
 
 .user-details {
   padding: 10px;
   border: 1px solid #ddd;
   margin-top: 10px;
   background-color: #f9f9f9;
+  text-align: center; 
 }
 
 .user-details p {

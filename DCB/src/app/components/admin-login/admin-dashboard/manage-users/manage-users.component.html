@@ -14,22 +14,22 @@
         <td data-label="Name">{{ user.name }}</td>
         <td data-label="Phone">{{ user.phone }}</td>
         <td data-label="Actions">
-          <button (click)="toggleUserDetails(user._id)">View</button>
+          <button class="view-button"  (click)="toggleUserDetails(user._id)">View</button>
           <button (click)="deleteUser(user._id)">Delete</button>
         </td>
       </tr>
       <!-- User details row -->
       <tr *ngIf="selectedUser">
-        <td colspan="3" id="user-details">
+        <td colspan="3" id="user-details" #userDetails>
           <div class="user-details">
-            <h4>User Details</h4>
+            <h4 style="color:white; background-color: #333;">User Details</h4>
             <p><strong>Name:</strong> {{ selectedUser.name }}</p>
             <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
             <p><strong>Email:</strong> {{ selectedUser.email }}</p>
             <p><strong>Gender:</strong> {{ selectedUser.gender }}</p>
             <p><strong>Date of Birth:</strong> {{ selectedUser.dob }}</p>
             
-            <h4>Payment Details</h4>
+            <h4 style="color:white; background-color: #333;">Payment Details</h4>
             <ul>
               <li *ngFor="let payment of selectedUser.payments">
                 <p><strong>Amount:</strong> {{ payment.amount }}</p>
@@ -37,13 +37,13 @@
               </li>
             </ul>
 
-            <h4>Booking Details</h4>
+            <h4 style="color:white; background-color: #333;">Booking Details</h4>
             <ul>
               <li *ngFor="let booking of selectedUser.bookings">
                 <p><strong>WheelerType:</strong> {{ booking.userId.wheelerType }}</p>
                 <p><strong>Date:</strong> {{ booking.selectedDate }}</p>
                 <p><strong>Time Slot:</strong> {{ booking.selectedTime }}</p>
-                <p><strong>Instructor:</strong> {{ booking.selectedInstructor.name}}</p>
+                <p><strong>Instructor:</strong> {{ booking.selectedInstructor.name }}</p>
               </li>
             </ul>
           </div>

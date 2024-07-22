@@ -67,15 +67,15 @@ export class ManageUsersComponent implements OnInit {
   }
 
   deleteUser(userId: string): void {
-    if(confirm('Do you want to delete this instructor?')){
-    this.adminService.deleteUsers(userId).subscribe(() => {
-      this.users = this.users.filter(user => user._id !== userId);
-      if (this.selectedUser && this.selectedUser._id === userId) {
-        this.selectedUser = null;
-      }
-    });
+    if (confirm('Do you want to delete this user?')) {
+      this.adminService.deleteUsers(userId).subscribe(() => {
+        this.users = this.users.filter(user => user._id !== userId);
+        if (this.selectedUser && this.selectedUser._id === userId) {
+          this.selectedUser = null;
+        }
+      });
+    }
   }
-}
 
   scrollToUserDetails(): void {
     if (this.userDetails) {
