@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDashboardComponent {
   phone : string = '';
+  userDetails1: any;
   
  constructor(
   private UserService:UserService,
@@ -19,11 +20,12 @@ export class UserDashboardComponent {
 
  ngOnInit() {
   this.route.params.subscribe(params => {
-    console.log(params['phone'] , 'phone');
+    
 
     this.UserService.getUserByPhone(params['phone']).subscribe(res => {
       this.UserService.setUserDetails(res)
-      console.log(res);
+      this.userDetails1 = this.UserService.getUserDetails();
+      
     })
 
     

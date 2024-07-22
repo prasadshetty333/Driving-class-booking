@@ -41,6 +41,7 @@ const routes: Routes = [
   ]},
 
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AdminAuthGuard], children: [
+      { path: '', redirectTo: 'bookings', pathMatch: 'full' },
       { path: 'instructors', component: ManageInstructorsComponent },
       { path: 'users', component: ManageUsersComponent },
       { path: 'bookings', component: ManageBookingsComponent },

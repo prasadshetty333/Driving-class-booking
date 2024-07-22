@@ -2,15 +2,20 @@
 
 
   .user-dashboard {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+   
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    
+    flex-wrap: wrap;
 }
 
 .user-dashboard h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+
 
 .user-dashboard nav ul {
     list-style: none;

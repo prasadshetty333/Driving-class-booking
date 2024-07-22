@@ -1,6 +1,12 @@
-<!-- admin-dashboard.component.html -->
 <div class="user-dashboard">
     <h1>User Dashboard</h1>
+    
+   
+    <div class="user-details">
+        <p><strong>Name:</strong> {{ userDetails1?.name }}</p>
+        <p><strong>Phone Number:</strong> {{ userDetails1?.phone }}</p>
+    </div>
+    
     <nav>
         <ul class="mt-5">
             <li><a routerLink="/user-dashboard/manage-booking" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Manage Bookings</a></li>
