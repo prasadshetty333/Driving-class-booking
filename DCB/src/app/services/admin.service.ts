@@ -36,6 +36,15 @@ export class AdminService {
     return this.http.delete(`http://localhost:3000/api/admin/users/${id}`);
   }
 
+  getUserPayments(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:3000/api/admin/users/${userId}/payments`);
+  }
+
+  getUserBookings(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:3000/api/admin/users/${userId}/bookings`);
+  }
+
+
 //bookings
   getBookings(): Observable<any> {
     return this.http.get('http://localhost:3000/api/admin/bookings');

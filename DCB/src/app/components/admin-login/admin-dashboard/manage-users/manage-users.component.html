@@ -1,26 +1,54 @@
 <div class="users-list">
-    <h3>Users List</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Gender</th>
-          <th>Date of Birth</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td data-label="Name">{{user.name}}</td>
-          <td data-label="Phone">{{user.phone}}</td>
-          <td data-label="Email">{{user.email}}</td>
-          <td data-label="Gender">{{user.gender}}</td>
-          <td data-label="Date of Birth">{{user.dob}}</td>
-          <td data-label="Actions"><button (click)="deleteUsers(user._id)">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h3>Users List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- User list and action buttons -->
+      <tr *ngFor="let user of users">
+        <td data-label="Name">{{ user.name }}</td>
+        <td data-label="Phone">{{ user.phone }}</td>
+        <td data-label="Actions">
+          <button (click)="toggleUserDetails(user._id)">View</button>
+          <button (click)="deleteUser(user._id)">Delete</button>
+        </td>
+      </tr>
+      <!-- User details row -->
+      <tr *ngIf="selectedUser">
+        <td colspan="3" id="user-details">
+          <div class="user-details">
+            <h4>User Details</h4>
+            <p><strong>Name:</strong> {{ selectedUser.name }}</p>
+            <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
+            <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+            <p><strong>Gender:</strong> {{ selectedUser.gender }}</p>
+            <p><strong>Date of Birth:</strong> {{ selectedUser.dob }}</p>
+            
+            <h4>Payment Details</h4>
+            <ul>
+              <li *ngFor="let payment of selectedUser.payments">
+                <p><strong>Amount:</strong> {{ payment.amount }}</p>
+                <p><strong>Method:</strong> {{ payment.method }}</p>
+              </li>
+            </ul>
+
+            <h4>Booking Details</h4>
+            <ul>
+              <li *ngFor="let booking of selectedUser.bookings">
+                <p><strong>WheelerType:</strong> {{ booking.userId.wheelerType }}</p>
+                <p><strong>Date:</strong> {{ booking.selectedDate }}</p>
+                <p><strong>Time Slot:</strong> {{ booking.selectedTime }}</p>
+                <p><strong>Instructor:</strong> {{ booking.selectedInstructor.name}}</p>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

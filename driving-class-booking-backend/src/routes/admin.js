@@ -134,6 +134,31 @@ router.post('/instructors', async (req, res) => {
     }
   });
 
+
+  router.get('/users/:userId/payments',async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const payments = await Payment.find({ userId }).exec();
+      res.status(200).json(payments);
+    } catch (err) {
+      res.status(500).json({ message: 'Server error', error: err });
+    }
+  });
+
+  router.get('/users/:userId/bookings',async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const bookings = await Booking.find({ userId })
+      .populate('userId' , ['name' , 'wheelerType'])
+      .populate('selectedInstructor' , 'name').exec();
+      res.status(200).json(bookings);
+    } catch (err) {
+      res.status(500).json({ message: 'Server error', error: err });
+    }
+  });
+  
+  
+
  
 
 

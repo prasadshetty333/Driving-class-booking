@@ -108,55 +108,6 @@ exports.loginUser = async (req, res) => {
   }
 }
 
-exports.sendOtp = async (req, res) => {
-  const { phone } = req.body;
-  const otp = otpService.generateOtp();
-  const otpExpires = new Date(Date.now() + 10 * 60 * 1000); // OTP expires in 10 minutes
 
-  try {
-    let user = await User.findOne({ phone });
-    if (!user) {
-      user = new User({ phone, otp, otpExpires });
-    } else {
-      user.otp = otp;
-      user.otpExpires = otpExpires;
-    }
-    await user.save();
-
-     smsService.sendSms(phone, `Your OTP is ${otp}`);
-
-    res.status(200).json({ message: 'OTP sent successfully' });
-  } catch (err) {
-    res.status(500).json({ message: 'Error sending OTP', error: err });
-  }
-};
-
-exports.resetPassword = async (req, res) => {
-  const { phone, otp, newPassword } = req.body;
-
-  try {
-    const user = await User.findOne({ phone });
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    if (!otpService.isOtpValid(user.otp, user.otpExpires)) {
-      return res.status(400).json({ message: 'Invalid or expired OTP' });
-    }
-
-    if (otp !== user.otp) {
-      return res.status(400).json({ message: 'Invalid OTP' });
-    }
-
-    user.password = newPassword;
-    user.otp = undefined;
-    user.otpExpires = undefined;
-    await user.save();
-
-    res.status(200).json({ message: 'Password reset successfully' });
-  } catch (err) {
-    res.status(500).json({ message: 'Error resetting password', error: err });
-  }
-};
 
 
