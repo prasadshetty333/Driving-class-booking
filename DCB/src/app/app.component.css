@@ -156,7 +156,6 @@ footer {
 
   .footer-container {
     padding: 20px;
-   
     margin-top: 10px;
   }
 
@@ -184,9 +183,42 @@ footer {
   margin: 0; /* Remove default margin */
 }
 
-.nav-container{
-  
+.nav-container {
   /* width: 100%; */
   padding: 15px;
   margin-top: 10px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .header-container, .footer-container {
+    padding: 0 10px;
+  }
+
+  .logo {
+    height: 40px; /* Reduce logo size */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .book-now {
+    padding: 8px 16px;
+  }
+
+  .footer-container {
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .footer-logo, .footer-nav, .footer-contact {
+    margin: 5px 0;
+  }
+
+  .btn {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
 }
