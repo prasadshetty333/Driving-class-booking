@@ -43,6 +43,10 @@
   text-decoration: none;
 }
 
+.btn:hover {
+  background-color: #1f74d0; /* Adjusted hover background color */
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .location-container {

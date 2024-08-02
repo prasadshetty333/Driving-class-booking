@@ -350,7 +350,7 @@ nav ul li a {
   margin: 0 20px;
 }
 
-.btn1 {
+/* .btn1 {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -359,7 +359,7 @@ nav ul li a {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-}
+} */
 
 @media (min-width: 600px) {
   .about-content img, .about-content p {
