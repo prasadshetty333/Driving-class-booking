@@ -41,7 +41,7 @@ export class BookingProcessComponent implements OnInit {
       (response: any) => {
         localStorage.setItem('userToken', response.token);
         localStorage.setItem('phone', this.formData.phone);
-        this.router.navigate(['/user-dashboard', { phone : this.formData.phone }]  );
+        this.router.navigate(['/user-dashboard/manage-booking', { phone : this.formData.phone }]  );
       },
       (error: any) => {
         console.error('Login failed:', error);
