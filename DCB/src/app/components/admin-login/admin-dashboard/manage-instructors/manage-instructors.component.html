@@ -120,8 +120,8 @@
           <td data-label="Wheeler Type">{{instructor.wheelerType.join(' , ')}}</td>
           <td data-label="Actions">
             <button class="mx-1" (click)="pre_updateInstructor(instructor)">Update</button>
-            <button class="mx-1" (click)="deleteInstructor(instructor._id)">Delete</button>
-            <button class="mx-1" (click)="pre_viewInstructor(instructor)">View</button>
+            <button class="mx-1" style="background-color: red;" (click)="deleteInstructor(instructor._id)">Delete</button>
+            <button class="mx-1" style="background-color: #ffcc00;" (click)="pre_viewInstructor(instructor)">View</button>
           </td>
         </tr>
       </tbody>
