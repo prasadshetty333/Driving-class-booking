@@ -6,7 +6,8 @@
   <div class="instructor" *ngFor="let instructor of instructors">
     <img [src]="instructor.photo" alt="{{ instructor.name }}" class="instructor-photo">
     <h3>{{ instructor.name }}</h3>
-    <p class="wheeler-type">{{ instructor.wheelerType }}</p>
+    <p class="wheeler-type">Wheeler Type: {{ instructor.wheelerType }}</p>
+    <p class="wheeler-type">Gender: {{ instructor.gender }} </p>
     <div class="buttons">
       <button class="btn1" [routerLink]="['/instructor-details', instructor._id]">View Profile</button>
       <!-- <button (click)="bookNow(instructor.name)" class="btn book-now">Book Now</button> -->

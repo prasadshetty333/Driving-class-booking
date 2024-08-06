@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
 //instructors
 router.post('/instructors', async (req, res) => {
   try {
-    const { name, photo, availableDates, availableTimes, wheelerType, description } = req.body;
+    const { name, photo, gender, availableDates, availableTimes, wheelerType, description } = req.body;
 
     let parsedAvailableDates;
     if (typeof availableDates === 'string') {
@@ -65,6 +65,7 @@ router.post('/instructors', async (req, res) => {
     const instructor = new Instructor({
       name,
       photo,
+      gender,
       availableDates: parsedAvailableDates,
       availableTimes: parsedAvailableTimes,
       wheelerType: parsedWheelerType,

@@ -3,7 +3,7 @@
 
   <div class="add-instructor-form mt-4">
     <h2>{{options}} Instructor</h2>
-    <form (ngSubmit)="  handleSubmit()">
+    <form (ngSubmit)="handleSubmit()">
       <div class="form-group">
         <label for="name">Name:</label>
         <input class="form-control" id="name" name="name" [(ngModel)]="newInstructor.name" required>
@@ -13,94 +13,104 @@
         <input class="form-control" id="photo" name="photo" [(ngModel)]="newInstructor.photo" required>
       </div>
       <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" id="gender" name="gender" [(ngModel)]="newInstructor.gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="availableDates">Available Dates</label>
         <div class="d-flex">
-          <input *ngIf="options=='Add'||options=='Update'" class="form-control" id="availableDates" type="date" name="availableDates" [(ngModel)]="dateInput">
-          <button class="mx-2" *ngIf="options=='Add'||options=='Update'" type="button" (click)="handleAddDate()">Add</button>
+          <input *ngIf="options == 'Add' || options == 'Update'" class="form-control" id="availableDates" type="date" name="availableDates" [(ngModel)]="dateInput">
+          <button class="mx-2" *ngIf="options == 'Add' || options == 'Update'" type="button" (click)="handleAddDate()">Add</button>
         </div>
       </div>
 
       <table class="mb-4">
         <thead>
-          <th>Date</th>
-          <th>Action</th>
+          <tr>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let date of newInstructor.availableDates">
-            <td>{{ this.date }}</td>
+            <td>{{ date }}</td>
             <td>
-              <button class="btn btn-danger" (click)="handleDeleteDate(this.date)" type="button">Delete</button>
+              <button class="btn btn-danger" (click)="handleDeleteDate(date)" type="button">Delete</button>
             </td>
-        </tr>
+          </tr>
         </tbody>
       </table>
 
       <div class="form-group">
         <label for="availableTimes">Available Times</label>
-        <!-- <input class="form-control" id="availableTimes" name="availableTimes" [(ngModel)]="newInstructor.availableTimes" required> -->
         <div class="d-flex">
-          <select *ngIf="options=='Add'||options=='Update'" name="timeInput" class="form-select" [(ngModel)]="timeInput">
+          <select *ngIf="options == 'Add' || options == 'Update'" name="timeInput" class="form-select" [(ngModel)]="timeInput">
             <option value="">Select time slot</option>
             <option value='09:00'>9:00 AM</option>
             <option value='12:00'>12:00 PM</option>
             <option value='15:00'>3:00 PM</option>
             <option value='18:00'>6:00 PM</option>
           </select>
-          <button class="mx-2" *ngIf="options=='Add'||options=='Update'" type="button" (click)="handleAddTime()">Add</button>
+          <button class="mx-2" *ngIf="options == 'Add' || options == 'Update'" type="button" (click)="handleAddTime()">Add</button>
         </div>
       </div>
 
       <table class="mb-4">
         <thead>
-          <th>Time Slots</th>
-          <th>Action</th>
+          <tr>
+            <th>Time Slots</th>
+            <th>Action</th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let time of newInstructor.availableTimes">
-            <td>{{ this.time }}</td>
+            <td>{{ time }}</td>
             <td>
-              <button class="btn btn-danger" (click)="handleDeleteTimeSlot(this.time)" type="button">Delete</button>
+              <button class="btn btn-danger" (click)="handleDeleteTimeSlot(time)" type="button">Delete</button>
             </td>
-        </tr>
+          </tr>
         </tbody>
       </table>
 
-
       <div class="form-group">
         <label for="wheelerType">Wheeler Type</label>
-        <!-- <input class="form-control" id="wheelerType" name="wheelerType" [(ngModel)]="newInstructor.wheelerType" required> -->
         <div class="d-flex">
-          <select *ngIf="options=='Add'||options=='Update'" name="timeInput" class="form-select" [(ngModel)]="wheelerInput">
+          <select *ngIf="options == 'Add' || options == 'Update'" name="wheelerInput" class="form-select" [(ngModel)]="wheelerInput">
             <option value="">Select Wheeler Type</option>
             <option value="Two Wheeler">Two Wheeler</option>
             <option value="Four Wheeler">Four Wheeler</option>
           </select>
-          <button class="mx-2" *ngIf="options=='Add'||options=='Update'" type="button" (click)="handleAddWheelerType()">Add</button>
+          <button class="mx-2" *ngIf="options == 'Add' || options == 'Update'" type="button" (click)="handleAddWheelerType()">Add</button>
         </div>
-
       </div>
 
       <table class="mb-4">
         <thead>
-          <th>Wheeler Types</th>
-          <th>Action</th>
+          <tr>
+            <th>Wheeler Types</th>
+            <th>Action</th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let wheeler of newInstructor.wheelerType">
-            <td>{{ this.wheeler }}</td>
+            <td>{{ wheeler }}</td>
             <td>
-              <button class="btn btn-danger" (click)="handleDeleteWheelerType(this.wheeler)" type="button">Delete</button>
+              <button class="btn btn-danger" (click)="handleDeleteWheelerType(wheeler)" type="button">Delete</button>
             </td>
-        </tr>
+          </tr>
         </tbody>
       </table>
-
 
       <div class="form-group">
         <label for="description">Description:</label>
         <textarea class="form-control" id="description" name="description" [(ngModel)]="newInstructor.description" required></textarea>
       </div>
-      <button type="submit">{{this.options}} instructor</button>
+      <button type="submit">{{ options }} Instructor</button>
     </form>
   </div>
 
@@ -116,8 +126,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let instructor of instructors">
-          <td data-label="Name">{{instructor.name}}</td>
-          <td data-label="Wheeler Type">{{instructor.wheelerType.join(' , ')}}</td>
+          <td data-label="Name">{{ instructor.name }}</td>
+          <td data-label="Wheeler Type">{{ instructor.wheelerType.join(' , ') }}</td>
           <td data-label="Actions">
             <button class="mx-1" (click)="pre_updateInstructor(instructor)">Update</button>
             <button class="mx-1" style="background-color: red;" (click)="deleteInstructor(instructor._id)">Delete</button>

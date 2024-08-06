@@ -5,6 +5,7 @@ const instructorSchema = new Schema({
 
   name: { type: String, required: true },
   photo: { type: String, required: true },
+  gender: { type: String, required: true },
   availableDates: { type: [String], required: true },
   availableTimes: { type: [String], required: true },
   wheelerType: { type: [String], required: true },

@@ -4,6 +4,7 @@ import { AdminService } from '../../../../services/admin.service';
 interface instructorType { 
   name: string ; 
   photo: string ; 
+  gender:string;
   availableDates: string[] ; 
   availableTimes: string[] ; 
   wheelerType: string[] ; 
@@ -17,7 +18,7 @@ interface instructorType {
 })
 export class ManageInstructorsComponent implements OnInit {
   instructors: any[] = [];
-  defaultInstructorValue = { name: '', photo: '', availableDates: [] , availableTimes: [], wheelerType: [], description: '' }
+  defaultInstructorValue = { name: '', photo: '', gender:'', availableDates: [] , availableTimes: [], wheelerType: [], description: '' }
   newInstructor : instructorType = this.defaultInstructorValue;
   options: 'Add' | 'Update' | 'View' = 'Add';
   dateInput : string = '';
