@@ -25,6 +25,7 @@ export class UserRegistrationComponent {
     email: '',
     gender: '',
     dob: '',
+    llrNumber:'',
     password: '',
 
     wheelerType: '',

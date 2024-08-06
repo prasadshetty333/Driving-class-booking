@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: false
   },
+  llrNumber: {
+    type: String,
+    required: false
+  },
   password :{
     type : String,
     required : true
