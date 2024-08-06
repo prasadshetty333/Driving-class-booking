@@ -5,10 +5,7 @@
     <div class="form-group">
       <label for="amount">Amount*</label>
       <b>₹ {{paymentData.amount}}</b>
-      <!-- <input type="number" id="amount" [(ngModel)]="paymentData.amount" name="amount" required #amount="ngModel"> -->
-      <!-- <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="error">
-        Amount is required.
-      </div> -->
+     
     </div>
 
     <div class="form-group">
@@ -25,13 +22,7 @@
       </div>
     </div>
 
-    <!-- <div class="form-group">
-      <label for="transactionId">Transaction ID*</label>
-      <input type="text" id="transactionId" [(ngModel)]="paymentData.transactionId" name="transactionId" required #transactionId="ngModel">
-      <div *ngIf="transactionId.invalid && (transactionId.dirty || transactionId.touched)" class="error">
-        Transaction ID is required.
-      </div>
-    </div> -->
+    
 
     <button type="submit" class="btn1" [disabled]="paymentForm.invalid">Make Payment</button>
   </form>
