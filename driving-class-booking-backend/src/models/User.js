@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   },
   llrNumber: {
     type: String,
-    required: false
+    required: true
   },
   password :{
     type : String,
