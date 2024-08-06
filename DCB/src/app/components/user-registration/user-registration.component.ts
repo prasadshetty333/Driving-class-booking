@@ -46,18 +46,9 @@ export class UserRegistrationComponent {
  
 
   constructor(private router: Router, private registrationService: RegistrationService,private http: HttpClient,private bookingService: BookingService) {}
-  onSubmit() {
-    this.registrationService.registerUser(this.user).subscribe(
-      (response: any) => {
-        console.log('User registered successfully:', response);
-        const userId = response._id; // Make sure the response includes the _id field
-        this.router.navigate(['/payment', { userId }]);
-      },
-      (error: any) => {
-        console.error('User registration failed:', error);
-      }
-    );
-  }
+  
+
+
 
   handleWheelTypeSelection() : void {
     const wheelerType = this.WheelerTypes.filter(_ => _.name === this.user.wheelerType)[0];
@@ -70,6 +61,18 @@ export class UserRegistrationComponent {
       this.user.selectedDuration = selectedPackage.duration;
       this.showTimeSelection = false;
     }
+  }
+
+
+  isOldEnough(dob: string): boolean {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age >= 18;
   }
 
   updateEndDate(startDate: string) {
@@ -100,6 +103,24 @@ export class UserRegistrationComponent {
     const year = today.getFullYear();
     return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
   }
+
+  onSubmit() {
+    if (this.isOldEnough(this.user.dob)) {
+      this.registrationService.registerUser(this.user).subscribe(
+        (response: any) => {
+          console.log('User registered successfully:', response);
+          const userId = response._id; // Make sure the response includes the _id field
+          this.router.navigate(['/payment', { userId }]);
+        },
+        (error: any) => {
+          console.error('User registration failed:', error);
+        }
+      );
+    } else {
+      alert('You must be at least 18 years old to register.');
+    }
+  }
+
   
 
   navigateToLogin() {

@@ -37,7 +37,13 @@
 
     <div class="form-group col-12 col-md-6">
       <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" [(ngModel)]="user.dob" name="dob">
+      <input type="date" id="dob" [(ngModel)]="user.dob" name="dob" required #dob="ngModel" (change)="dob.valid && !isOldEnough(user.dob)">
+      <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="error">
+        Date of Birth is required.
+      </div>
+      <div *ngIf="dob.valid && !isOldEnough(user.dob)" class="error">
+        You must be at least 18 years old to register.
+      </div>
     </div>
 
     <div class="form-group col-12 col-md-6">
