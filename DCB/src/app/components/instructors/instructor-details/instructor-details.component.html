@@ -1,5 +1,9 @@
 <div class="instructor-details-container" *ngIf="instructor">
-  <h1>{{ instructor.name }}</h1>
+  <h2>{{ instructor.name }}</h2>
   <img [src]="instructor.photo" alt="{{ instructor.name }}">
+  <p><strong>wheeler-Type : </strong>{{ instructor.wheelerType }}</p>
+  <p><strong>gender : </strong>{{ instructor.gender }}</p>
+ 
+  <p><strong>Description  :</strong></p>
   <div [innerHTML]="instructor.description"></div>
 </div>

@@ -4,6 +4,8 @@ export interface Instructor {
     photo: string;
     gender:string;
     wheelerType: string;
+    availableDates: [String];
+    availableTimes:[String];
     description:string
   }
   
