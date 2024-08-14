@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { PaymnetService } from '../../services/payment.service';
+import { PaymentService } from '../../services/payment.service';
 import { BookingService } from '../../services/booking.service';
 
 
@@ -22,7 +22,7 @@ export class PaymentComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
-    private PaymnetService:PaymnetService,
+    private PaymnetService:PaymentService,
     private BookingService:BookingService
   ) {}
 
