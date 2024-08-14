@@ -35,6 +35,7 @@ import { ManageBookingComponent } from './components/user-dashboard/manage-booki
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './components/booking-process/forgot-password/forgot-password.component';
 import { ClassAttendedComponent } from './components/user-dashboard/class-attended/class-attended.component';
+import { LessonDetailsComponent } from './components/lessons/lesson-details/lesson-details.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
         UserDashboardComponent,
         ManageBookingComponent,
         ForgotPasswordComponent,
-        ClassAttendedComponent
+        ClassAttendedComponent,
+        LessonDetailsComponent
   ],
   imports: [
     BrowserModule,

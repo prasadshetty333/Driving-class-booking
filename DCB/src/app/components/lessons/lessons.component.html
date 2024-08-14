@@ -1,15 +1,17 @@
 <div class="lessons-container">
-  <div  class="heading">
+  <div class="heading">
     <h1>DRIVING LESSONS</h1>
   </div>
-  
+
   <div class="driving-tips">
     <div *ngFor="let tip of drivingTips" class="driving-tip">
-      <a [href]="tip.link" target="_blank" class="tip-link">
+      <a [routerLink]="['/lesson-details']"
+         [queryParams]="{ title: tip.title, photo: tip.photo, description: tip.description }"
+         class="tip-link">
         <img [src]="tip.photo" alt="{{ tip.title }}" class="tip-photo">
         <div class="tip-content">
           <h3>{{ tip.title }}</h3>
-          <p>{{ tip.description }}</p>
+          <!-- <p>{{ tip.description }}</p> -->
         </div>
       </a>
     </div>

@@ -23,6 +23,7 @@ import { ManageBookingComponent } from './components/user-dashboard/manage-booki
 import { UserAuthGuard } from './services/user-auth.guard';
 import { ForgotPasswordComponent } from './components/booking-process/forgot-password/forgot-password.component';
 import { ClassAttendedComponent } from './components/user-dashboard/class-attended/class-attended.component';
+import { LessonDetailsComponent } from './components/lessons/lesson-details/lesson-details.component';
 
 const routes: Routes = [
   { path: 'instructors', component: InstructorsComponent },
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'register', component: UserRegistrationComponent },
   { path: 'instructor-details/:id', component: InstructorDetailsComponent },
   { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'lesson-details', component: LessonDetailsComponent },
+
 
   { path: 'user-dashboard', component: UserDashboardComponent , canActivate: [UserAuthGuard] , children: [
     { path: 'manage-booking', component: ManageBookingComponent },
